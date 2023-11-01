@@ -1,14 +1,15 @@
 # Quiz Generator
 
+### Usage
+
+This program is most suitable for academic setting where the intention is to reduce cheating. Instead encourage and maximize hardwork of the students.
+It auto generates questions and corresponding answers, scrambles them into different types, scrambles the choices for each questions and creates the result in separate files of "Questions" and "Answers" per types.
+
 ### Installation
 
 #### **1. Clone the repository**
 #### **2. cd into the repository**
 #### **3. while you are inside the repository, run `./quiz_generator.py` to run the program. Follow the prompts to generate any number of question types and any amount of question per file**
-
-### Usage
-
-This program is most suitable for academic setting where the intention is to reduce cheating. Instead encourage and maximize hardwork of the students.
 
 ![image1](.folder_QA.JPG)
 
