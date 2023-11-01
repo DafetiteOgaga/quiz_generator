@@ -8,12 +8,16 @@
 
 ### Usage
 
-This program is most suitable for academic setting where the intention is to reduce cheating, rather encourage and maximize hardwork of the students.
+This program is most suitable for academic setting where the intention is to reduce cheating. Instead encourage and maximize hardwork of the students.
 
 ![image1](.folder_QA.JPG)
+
 ![image2](.questions_types.JPG)
+
 ![image3](.questions.JPG)
+
 ![image4](.answers_types.JPG)
+
 ![image5](.answers.JPG)
 
 # Changelog
