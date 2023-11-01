@@ -12,13 +12,18 @@ This program is most suitable for academic setting where the intention is to red
 
 ![image1](.folder_QA.JPG)
 
+
 ![image2](.questions_types.JPG)
+
 
 ![image3](.questions.JPG)
 
+
 ![image4](.answers_types.JPG)
 
+
 ![image5](.answers.JPG)
+
 
 # Changelog
 This file contains the notable changes made to the Quiz Generator project.
