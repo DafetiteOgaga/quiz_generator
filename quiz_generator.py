@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import sys, os, random #, pyperclip, pprint
+import sys, os, random
 
 def is_float(string):
     try:
@@ -9,21 +9,16 @@ def is_float(string):
     except ValueError:
         return False
     
-
-def win_mac_func(my_tuple=[]):
+def win_mac_func():
 	backslash = "\\"
 	forwardslash = "/"
-	while True:
-		user_input = input(my_tuple[0])
-		if user_input.lower() == "w" or user_input.lower() == "m":
-			if user_input.lower() == "w":
-				path_to_use = my_tuple[1]
-				slash = backslash
-			elif user_input.lower() == "m":
-				path_to_use = my_tuple[2]
-				slash = forwardslash
-			break
-	return path_to_use, slash
+	user_home = os.path.expanduser("~")
+	desktop_path = os.path.join(user_home, "Desktop")
+	if backslash in desktop_path:
+		slash = backslash
+	elif forwardslash in desktop_path:
+		slash = forwardslash
+	return desktop_path, slash
 
 def num_func(my_st):
 	while True:
@@ -81,8 +76,7 @@ def questions_and_answers(default=0):
 					key, value = user_input.split('#')
 					questions_then_answers[key.strip()] = value.strip()
 					break
-				print('The question and answer must be separated by "#"')
-		# print(questions_then_answers)			
+				print('The question and answer must be separated by "#"')		
 
 	else:
 		print('Using the default questions and answers.')
@@ -143,14 +137,9 @@ def main():
 
 	questions_and_answers_var, num_of_questions = questions_and_answers(val)
 
-    ## questions and answers filepaths creation 
-	wim_mac_str = "Are you using a Windows or Mac [w/M] >>> "
-	w_path = "c:\\Users\pc\Desktop\\"
-	m_path = "/mnt/c/Users/pc/Desktop/"
-	win_mac = (wim_mac_str, w_path, m_path)
-	path_to, delimiter = win_mac_func(win_mac)
+	path_to, delimiter = win_mac_func()
 	
-	quiz_location = f"{path_to}QuizFolder"
+	quiz_location = f"{path_to}{delimiter}QuizFolder"
 	question_location = f"{quiz_location}{delimiter}Questions"
 	answer_location = f"{quiz_location}{delimiter}Answers"
 
@@ -240,24 +229,16 @@ def main():
 				# quizFileName.write(f"\t{'ABCD'[options]}. {answerOptions[options]}")
 			
 			
-			
-	# open file to read them(optional)
-	# questionQuizFileName = open(f"{quizQuestionFilePath}{delimiter}{file_type}", "r")
-	# readQuestionFile = questionQuizFileName.read()
 	### close the file(after writing)
 	questionQuizFileName.close()
 	# print(readQuestionFile)
 
-
-    # open file to read them(optional)
-	# answerQuizFileName = open(f"{quizAnswerFilePath}{delimiter}{file_type}", "r")
-	# readAnswerFile = answerQuizFileName.read()
 	### close the file(after writing)
 	answerQuizFileName.close()
 	# print(readAnswerFile)
 
 	print()
-	print(f"{quizFileNumber + 1} files, each having {quizNum + 1} Questions and Answers has been created on to your {path_to.split(os.path.sep)[-2]} inside {os.path.basename(quiz_location)} directory")
+	print(f"{quizFileNumber + 1} files, each having {quizNum + 1} Questions and Answers has been created on to your {path_to.split(os.path.sep)[-1]} inside {os.path.basename(quiz_location)} directory")
 	print()
 	print("Gracias!")
 

@@ -25,7 +25,8 @@ It auto generates questions and corresponding answers, scrambles them into diffe
 This file contains the notable changes made to the Quiz Generator project.
 
 ## New
-	- Added support for linux, mac OS
+	- Removed the prompt for Windows and/or Mac OS
+	- Added support for windows and mac OS
 	- Added the feature to allow users write their own questions and answers
 	- Added sample screenshot of the files, types, questions, etc when the script is executed
     - Added cls command to the list
@@ -37,6 +38,7 @@ This file contains the notable changes made to the Quiz Generator project.
 
 
 ## Fixes
+	- Fixed absolute path issues
 	- each prompts now runs contineously until you enter a valid inut
 	- Added execute permission for all user to the files.
     - Fixed response to wrong input entered by users during installation and command execution
